@@ -32,10 +32,22 @@
             justify-content: center;
         }
 
+        .hero-sub {
+            max-width: 600px;
+        }
+
         .gradient-text {
             background: linear-gradient(90deg, #6e3df0, #f54581, #ff7a3c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+        }
+
+        .hero-badge-list {
+            line-height: 2;
+        }
+
+        .hero-badge-list span {
+            font-weight: 500;
         }
 
         .hero-badge-list i {
@@ -56,6 +68,8 @@
             box-shadow: 0 22px 80px rgba(15, 23, 42, 0.12);
             position: relative;
             height: 100%;
+            display: grid;
+            gap: 5px;
         }
 
         .pricing-card {
@@ -77,20 +91,27 @@
         }
 
         .option-box {
-            border-radius: 16px;
+            border-radius: 10.57px;
             border: 1px solid #e5e7eb;
-            padding: 14px 16px;
+            padding: 20px 16px;
             margin-bottom: 14px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             background: #ffffff;
+            position: relative;
         }
 
         .option-box.active {
+            border: 2px solid;
             border-color: #7c3aed;
-            box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2);
+            /* box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2); */
             position: relative;
+            color: #7c3aed;
+        }
+
+        .option-box.active .option-price span {
+            color: #7c3aed;
         }
 
         .option-left {
@@ -124,7 +145,9 @@
             font-weight: 500;
             position: relative;
             /* Keeps label flow intact */
-            padding-right: 80px;
+            /* padding-right: 80px; */
+            padding-right: 100px;
+
         }
 
         .option-price {
@@ -133,38 +156,41 @@
         }
 
         .option-price span {
-            color: #6b7280;
+            /* color: #6b7280; */
             font-size: 0.85rem;
         }
 
         .small-info {
-            font-size: 0.8rem;
-            color: #6b7280;
+            font-size: 0.9rem;
+            color: #595959;
         }
 
-        .badge-pill {
+        .small-info a {
+            color: #7445D1
+        }
+
+        .option-badge {
             position: absolute;
-            top: -25px;
+            top: -12px;
             /* Pulls above top border; adjust px to match image exactly */
-            right: -155px;
+            right: 12px;
             /* Aligns to right border; adjust for padding/border */
-            margin-left: 0;
-            /* Remove inline margin since absolutely positioned */
             z-index: 1;
-            border-radius: 999px;
-            padding: 3px 10px;
+            border-radius: 4px;
+            padding: 1px 5px;
+            transform: none;
             font-size: 0.7rem;
-            background: #fef3c7;
-            color: #92400e;
+            background: #FEF7B8;
+            color: #000000;
+            border: 1px solid #DED68F;
             display: inline-flex;
             align-items: center;
             gap: 4px;
-            margin-left: 8px;
         }
 
-        .badge-pill.green {
-            background: #dcfce7;
-            color: #166534;
+        .option-badge.green {
+            background: #C6FFBE;
+            border: 1px solid #99D890;
         }
 
         .purchase-btn {
@@ -238,16 +264,16 @@
             <!-- Left text -->
             <div class="col-lg-7">
                 <div class="hero-title">
-                    <h1 class="display-5 fw-bold mb-3">
+                    <h1 class="display-5 fw-bold mb-1 lh-base">
                         Customize<br />
                         Smart & <span class="gradient-text">Purchase-Ready</span><br />
                     </h1>
-                    <h1 class="fw-normal">
+                    <h1 class="fw-medium">
                         WooCommerce Checkout Pages!
                     </h1>
                 </div>
-                <p class="mb-4 text-muted" style="max-width: 480px;">
-                    The best WooCommerce Checkout Manager – easily customize checkout fields on your WooCommerce
+                <p class="hero-sub my-4 text-muted">
+                    The best WooCommerce Checkout Manager – Easily customize checkout fields on your WooCommerce
                     checkout page.
                 </p>
 
@@ -281,58 +307,48 @@
                 <div class="hero-card-wrapper">
                     <div class="pricing-card">
                         <div class="pricing-card-body">
-                            <h5 class="fw-bold mb-2 mt-4 text-center">Subscription Options</h5>
+                            <h5 class="fw-bold mb-2 mt-3 text-center">Subscription Options</h5>
                             <p class="small-info text-center mb-3">
                                 A subscription entitles you to 1 year of updates and support from the date of purchase.
                                 <a href="#" class="text-decoration-underline small-info">License details</a>
                             </p>
 
-                            <!-- Option 1 -->
-                            <div class="option-box">
-                                <div class="option-left">
-                                    <div class="radio-dot"></div>
-                                    <div>
-                                        <div class="option-label">Single Site</div>
-                                    </div>
-                                </div>
-                                <div class="option-price">
-                                    $39.00 <span>/year</span>
-                                </div>
-                            </div>
-
-                            <!-- Option 2 (active) -->
-                            <div class="option-box active">
-                                <div class="option-left">
-                                    <div class="radio-dot"></div>
-                                    <div>
-                                        <div class="option-label">
-                                            Up to 5 Sites
-                                            <span class="badge-pill">
-                                                🔥 Most purchased
-                                            </span>
+                            <div class="pricing-options">
+                                <!-- Option 1 -->
+                                <div class="option-box">
+                                    <div class="option-left">
+                                        <div class="radio-dot"></div>
+                                        <div>
+                                            <div class="option-label">Single Site</div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="option-price">
-                                    $69.00 <span>/year</span>
-                                </div>
-                            </div>
-
-                            <!-- Option 3 -->
-                            <div class="option-box">
-                                <div class="option-left">
-                                    <div class="radio-dot"></div>
-                                    <div>
-                                        <div class="option-label">
-                                            Up to 25 Sites
-                                            <span class="badge-pill green">
-                                                💰 Best Value
-                                            </span>
-                                        </div>
+                                    <div class="option-price">
+                                        $39.00 <span>/year</span>
                                     </div>
                                 </div>
-                                <div class="option-price">
-                                    $129.00 <span>/year</span>
+
+                                <!-- Option 1: Active -->
+                                <div class="option-box active">
+                                    <span class="option-badge">🔥 Most purchased</span>
+                                    <div class="option-left">
+                                        <div class="radio-dot"></div>
+                                        <div>
+                                            <div class="option-label">Up to 5 Sites</div> <!-- No badge here -->
+                                        </div>
+                                    </div>
+                                    <div class="option-price">$69.00 <span>/year</span></div>
+                                </div>
+
+                                <!-- Option 2 -->
+                                <div class="option-box">
+                                    <span class="option-badge green">💰 Best Value</span>
+                                    <div class="option-left">
+                                        <div class="radio-dot"></div>
+                                        <div>
+                                            <div class="option-label">Up to 25 Sites</div>
+                                        </div>
+                                    </div>
+                                    <div class="option-price">$129.00 <span>/year</span></div>
                                 </div>
                             </div>
 
@@ -346,7 +362,6 @@
                                     <span>30-Days No Questions Asked Refund</span>
                                 </span>
                             </div>
-
 
                         </div>
                     </div>
