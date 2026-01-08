@@ -34,6 +34,8 @@
 
         .hero-sub {
             max-width: 600px;
+            color: #0E152D;
+            font-weight: 400;
         }
 
         .gradient-text {
@@ -69,7 +71,7 @@
             position: relative;
             height: 100%;
             display: grid;
-            gap: 5px;
+            gap: 10px;
         }
 
         .pricing-card {
@@ -85,7 +87,7 @@
             opacity: 0.8;
             z-index: -1;
             width: 509px;
-            height: 641px;
+            /* height: 641px; */
             padding: 30px;
             border-radius: 30px;
         }
@@ -94,7 +96,7 @@
             border-radius: 10.57px;
             border: 1px solid #e5e7eb;
             padding: 20px 16px;
-            margin-bottom: 14px;
+            margin-bottom: 25px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -136,6 +138,7 @@
             content: "";
             position: absolute;
             inset: 3px;
+            top: 2px;
             border-radius: inherit;
             background: #7c3aed;
         }
@@ -146,7 +149,7 @@
             position: relative;
             /* Keeps label flow intact */
             /* padding-right: 80px; */
-            padding-right: 100px;
+            /* padding-right: 10px; */
 
         }
 
@@ -201,13 +204,12 @@
             padding: 14px 0;
             font-weight: 600;
             font-size: 1rem;
-            margin-top: 12px;
+            margin-top: 0px;
             margin-bottom: 18px;
         }
 
         .purchase-btn:hover {
-            background: #7445D1;
-            color: white;
+            background: #EEC301;
         }
 
         .refund-note {
@@ -215,11 +217,11 @@
             align-items: center;
             gap: 8px;
             font-size: 0.8rem;
-            color: #4b5563;
+            color: black;
             padding: 8px 14px;
-            border-radius: 999px;
+            border-radius: 30px;
             border: 1px solid #e5e7eb;
-            background: #f9fafb;
+            background: white;
         }
 
         .refund-icon {
@@ -229,7 +231,6 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            background: #4f46e5;
             color: #fff;
             font-size: 0.7rem;
         }
@@ -259,6 +260,159 @@
                 margin: 40px auto 0;
             }
         }
+
+        /* Button  */
+
+        .animated-button {
+            background: transparent;
+            position: relative;
+            padding: 15px 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            font-weight: 500;
+            text-decoration: none;
+            cursor: pointer;
+            border: 1px solid rgb(116, 69, 209);
+            border-radius: 25px;
+            outline: none;
+            overflow: hidden;
+            color: black;
+            transition: color 0.3s ease-out;
+            text-align: center;
+            min-width: 200px;
+        }
+
+        .animated-button .btn-content {
+            display: flex;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .animated-button span {
+            display: block;
+            font-size: 14px;
+        }
+
+        .animated-button .btn-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgb(116, 69, 209);
+            transition: all 0.3s ease-out;
+            z-index: 2;
+            flex-shrink: 0;
+            margin-right: 10px;
+        }
+
+        .animated-button .btn-arrow {
+            display: flex;
+            align-items: center;
+            width: 0;
+            opacity: 0;
+            overflow: hidden;
+            transform: translateX(-10px);
+            transition: all 0.3s ease-out;
+            z-index: 2;
+            position: relative;
+        }
+
+        .animated-button .btn-arrow svg {
+            position: absolute;
+            top: 2px;
+        }
+
+
+
+        .demo-button::before {
+            position: absolute;
+            top: 50%;
+            left: 60px;
+            transform: translate(-50%, -50%) scale(0);
+            content: "";
+            border-radius: 50%;
+            display: block;
+            background-color: rgb(116, 69, 209);
+            transition: transform 0.4s ease-out;
+            z-index: 0;
+            width: 200%;
+            aspect-ratio: 1 / 1;
+            height: auto;
+        }
+
+        .doc-button::before {
+            position: absolute;
+            top: 50%;
+            left: 37px;
+            transform: translate(-50%, -50%) scale(0);
+            content: "";
+            border-radius: 50%;
+            display: block;
+            background-color: rgb(116, 69, 209);
+            transition: transform 0.4s ease-out;
+            z-index: 0;
+            width: 200%;
+            aspect-ratio: 1 / 1;
+            height: auto;
+        }
+
+        .animated-button:hover {
+            color: #fff;
+        }
+
+        .animated-button:hover .btn-dot {
+            width: 0;
+            opacity: 0;
+            margin-right: 0;
+        }
+
+        .animated-button:hover .btn-arrow {
+            width: 15px;
+            height: 15px;
+            opacity: 1;
+            margin-left: 10px;
+            transform: translateX(0);
+        }
+
+        .animated-button:hover::before {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+
+
+        /* Fixed widths for each button */
+        .demo-button {
+            /* width: 200px; */
+        }
+
+        /* Container for buttons */
+        .button-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        /* Button Style End  */
+
+
+        .info-btn {
+            cursor: pointer;
+            opacity: 0.6;
+            transition: opacity 0.2s ease;
+        }
+
+        .info-btn:hover {
+            opacity: 1;
+            color: #7c3aed;
+            /* Matches your purple theme */
+        }
+
+        .info-btn svg {
+            pointer-events: none;
+            /* Fixes SVG hover flicker [web:74] */
+        }
     </style>
 </head>
 
@@ -268,6 +422,7 @@
         <div class="row align-items-center g-4">
             <!-- Left text -->
             <div class="col-lg-7">
+
                 <div class="hero-title">
                     <h1 class="display-5 fw-bold mb-1 lh-base">
                         Customize<br />
@@ -277,34 +432,58 @@
                         WooCommerce Checkout Pages!
                     </h1>
                 </div>
-                <p class="hero-sub my-4 text-muted">
-                    The best WooCommerce Checkout Manager – Easily customize checkout fields on your WooCommerce
+                <p class="hero-sub my-4 ">
+                    The Best WooCommerce Checkout Manager – Easily customize checkout fields on your WooCommerce
                     checkout page.
                 </p>
 
-                <div class="hero-badge-list mb-4">
+                <div class="hero-badge-list mb-5">
                     <div class="d-flex align-items-center mb-1">
-                        <i class="bi bi-check-circle-fill"></i>
+                        <img src="./Group 1171276570.svg" alt="" class="me-2">
                         <span>24 Custom Checkout Fields</span>
                     </div>
                     <div class="d-flex align-items-center mb-1">
-                        <i class="bi bi-check-circle-fill"></i>
+                        <img src="./Group 1171276570.svg" alt="" class="me-2">
                         <span>Custom Sections</span>
                     </div>
                     <div class="d-flex align-items-center">
-                        <i class="bi bi-check-circle-fill"></i>
+                        <img src="./Group 1171276570.svg" alt="" class="me-2">
                         <span>Block Compatibility</span>
                     </div>
                 </div>
 
-                <div class="d-flex flex-wrap gap-3">
-                    <button class="btn btn-primary hero-cta-btn" style="background:#4c1d95;border-color:#4c1d95;">
-                        ● Try Demo
+                <!-- <div class="d-flex flex-wrap gap-3"> -->
+                <div class="button-container">
+                    <button class="animated-button demo-button">
+                        <div class="btn-content">
+                            <span class="btn-dot"></span>
+                            <span>Try Demo</span>
+                            <span class="btn-arrow">
+                                <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.75 4.75H0.75M10.75 4.75L6.75 8.75M10.75 4.75L6.75 0.75"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
                     </button>
-                    <button class="btn btn-outline-secondary hero-cta-btn-outline">
-                        ● Documentation
+                    <button class="animated-button doc-button">
+                        <div class="btn-content">
+                            <span class="btn-dot"></span>
+                            <span>Documentation</span>
+                            <span class="btn-arrow">
+                                <svg width="12" height="10" viewBox="0 0 12 10" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.75 4.75H0.75M10.75 4.75L6.75 8.75M10.75 4.75L6.75 0.75"
+                                        stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </span>
+                        </div>
                     </button>
                 </div>
+                <!-- </div> -->
             </div>
 
             <!-- Right pricing card -->
@@ -312,7 +491,7 @@
                 <div class="hero-card-wrapper">
                     <div class="pricing-card">
                         <div class="pricing-card-body">
-                            <h5 class="fw-bold mb-2 mt-3 text-center">Subscription Options</h5>
+                            <h5 class="fw-bold mt-3 text-center">Subscription Options</h5>
                             <p class="small-info text-center mb-3">
                                 A subscription entitles you to 1 year of updates and support from the date of purchase.
                                 <a href="#" class="text-decoration-underline small-info">License details</a>
@@ -323,8 +502,12 @@
                                 <div class="option-box">
                                     <div class="option-left">
                                         <div class="radio-dot"></div>
-                                        <div>
+                                        <div class="d-flex align-items-center gap-1">
                                             <div class="option-label">Single Site</div>
+                                            <button class="info-btn border-0 bg-transparent p-0 ms-1" type="button"
+                                                aria-label="More info">
+                                                <img src="./Group 437.svg" alt="">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="option-price">
@@ -337,8 +520,12 @@
                                     <span class="option-badge">🔥 Most purchased</span>
                                     <div class="option-left">
                                         <div class="radio-dot"></div>
-                                        <div>
+                                        <div class="d-flex align-items-center gap-1">
                                             <div class="option-label">Up to 5 Sites</div> <!-- No badge here -->
+                                            <button class="info-btn border-0 bg-transparent p-0 ms-1" type="button"
+                                                aria-label="More info">
+                                                <img src="./Group 437.svg" alt="">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="option-price">$69.00 <span>/year</span></div>
@@ -349,8 +536,12 @@
                                     <span class="option-badge green">💰 Best Value</span>
                                     <div class="option-left">
                                         <div class="radio-dot"></div>
-                                        <div>
+                                        <div class="d-flex align-items-center gap-1">
                                             <div class="option-label">Up to 25 Sites</div>
+                                            <button class="info-btn border-0 bg-transparent p-0 ms-1" type="button"
+                                                aria-label="More info">
+                                                <img src="./Group 437.svg" alt="">
+                                            </button>
                                         </div>
                                     </div>
                                     <div class="option-price">$129.00 <span>/year</span></div>
@@ -363,8 +554,11 @@
 
                             <div class="d-flex justify-content-center">
                                 <span class="refund-note">
-                                    <span class="refund-icon">$</span>
-                                    <span>30-Days No Questions Asked Refund</span>
+                                    <span class="refund-icon">
+                                        <img src="./Group.svg" alt="">
+                                    </span>
+                                    <span class="fw-bold">30-Days</span>
+                                    <span class="fw-medium">No Questions Asked Refund</span>
                                 </span>
                             </div>
 
