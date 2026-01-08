@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Hero</title>
 
     <!-- Bootstrap 5 CSS -->
@@ -107,7 +107,7 @@
         .option-box.active {
             border: 2px solid;
             border-color: #7c3aed;
-            /* box-shadow: 0 0 0 2px rgba(124, 58, 237, 0.2); */
+            box-shadow: 0px 3px 7px 0px rgba(89, 64, 233, 0.15);
             position: relative;
             color: #7c3aed;
         }
@@ -254,11 +254,32 @@
         @media (max-width: 991.98px) {
             .hero-section {
                 padding-top: 40px;
+                justify-content: normal;
             }
 
             .hero-card-wrapper {
                 margin: 40px auto 0;
             }
+
+            .pricing-card {
+                /* content: ""; */
+                /* position: absolute; */
+                /* inset: -30px; */
+                /* border-radius: 30px; */
+                /* background: linear-gradient(135deg, #f97316, #6366f1, #ec4899); */
+                background: linear-gradient(315deg, #F5D4C6 15%, #B3B5E9 42%, #E2B6D7 100%);
+                /* background-image: linear-gradient(to right top, #b3b5e9, #d1b6e2, #e5b9d7, #f1bfce, #f6c7c7, #f6c8c6, #f6cac6, #f6cbc5, #6366f1, #6366f1, #6366f1, #6366f1); */
+                /* background-image: linear-gradient(to right bottom, #e2b6d7, #dcb5db, #d4b5df, #ccb5e3, #c2b5e6, #cab5e4, #d1b5e1, #d8b6de, #eabad4, #f3c1cb, #f6cac6, #f5d4c6); */
+                backdrop-filter: blur(204px);
+                opacity: 0.8;
+                z-index: -1;
+                width: 509px;
+                /* height: 641px; */
+                padding: 15px;
+                border-radius: 30px;
+            }
+
+
         }
 
         /* Button  */
@@ -426,10 +447,10 @@
                 <div class="hero-title">
                     <h1 class="display-5 fw-bold mb-1 lh-base">
                         Customize<br />
-                        Smart & <span class="gradient-text">Purchase-Ready</span><br />
+                        Smart & <span class="gradient-text">Sales-Driven</span><br />
                     </h1>
                     <h1 class="fw-medium">
-                        WooCommerce Checkout Pages!
+                        WooCommerce Checkout Fields
                     </h1>
                 </div>
                 <p class="hero-sub my-4 ">
